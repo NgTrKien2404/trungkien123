@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="2.5" client="site" type="template" method="upgrade">
+  <name>dd_work_89</name>
+  <creationDate>2016-03-01</creationDate>
+ <author>DiabloDesign</author>
+	<authorEmail>biuro@diablodesign.eu</authorEmail>
+	<authorUrl>http://www.diablodesign.eu</authorUrl>
+	<copyright>Copyright (C) DiabloDesign License All rights reserved.</copyright>
+	<version>1.0.0</version>
+
+ <description>
+	<![CDATA[
+		<style type="text/css" media="all">
+				<!--
+				h1 {clear:both;font-family: Georgia, sans-serif;font-size:36px;  font-weight: normal;}
+				h2 {clear:both;font-family: Georgia, sans-serif;font-size:20px;  font-weight: normal; }
+				-->
+			</style>
+		
+
+	        <div class="dd-description clearfix">
+	        <h1><img src="http://diablodesign.eu/syg.png" /></a><span style="color: #cc0607;"> DD Work 89 Premium Version</span></h1>
+	        <hr>
+			<div class="pull-left" style="max-width: 35.69%;">
+			<img style="max-width: 100%; box-sizing: border-box; -webkit-box-sizing: border-box; padding: 10px; background: #fff; border: 1px solid #e1e1e1;" src="../templates/dd_work_89/images/sc.jpg" />
+		
+		</div>
+		<div class="pull-left" style="max-width: 64.31%; box-sizing: border-box; -webkit-box-sizing: border-box; padding: 0 30px;">
+			<div style="margin-bottom: 20px;">
+				<div style="margin-bottom: 20px;">
+			
+			
+			<div style="margin: 20px 0 0;">
+			
+
+				</div></div></div></div>
+	</div>
+	]]>
+	</description>
+  <files>
+    <file>CloudZoom.js</file>
+    <file>Readme.txt</file>
+    <file>blank.png</file>
+    <file>bootstrap.min.js</file>
+    <file>component.php</file>
+    <file>error.php</file>
+    <file>functions-additional.php</file>
+    <file>functions.php</file>
+    <file>index.html</file>
+    <file>index.php</file>
+    <file>jquery.js</file>
+    <file>modrender.php</file>
+    <file>script.ie.js</file>
+    <file>script.js</file>
+    <file>style.ie.css</file>
+    <file>templateDetails.xml</file>
+    <file>virtuemart.js</file>
+    <folder>css</folder>
+    <folder>fields</folder>
+    <folder>html</folder>
+    <folder>images</folder>
+    <folder>includes</folder>
+    <folder>js</folder>
+    <folder>language</folder>
+    <folder>library</folder>
+    <folder>plugins</folder>
+    <folder>prototypes</folder>
+    <folder>templates</folder>
+  </files>
+  <positions>
+    <position>banner-1</position>
+    <position>banner-2</position>
+    <position>banner-3</position>
+    <position>footer1</position>
+    <position>footer2</position>
+    <position>footer3</position>
+    <position>footer4</position>
+    <position>left</position>
+    <position>position-1</position>
+    <position>position-7</position>
+    <position>position-8</position>
+    <position>topbanner-1</position>
+    <position>topbanner-2</position>
+  </positions>
+  <config>
+    <fields name="params" addfieldpath="/templates/dd_work_89/fields">
+      <fieldset name="logo" label="Logo">
+        <field type="spacer" class="text" label="...........................................LOGO......................................................." /> 
+        <field name="logoFile" default="templates/dd_work_89/images/logo.png" type="media" label="TPL_LOGO_LABEL" description="TPL_LOGO_DESC"/>
+        <field name="logoLink" default="" type="text" label="TPL_LOGOLINK_LABEL" description="TPL_LOGOLINK_DESC"/>
+        <field type="spacer" name="spacer" hr="true"/>
+      </fieldset>
+	   <fieldset name="license" label="License Key">
+    <field type="spacer" class="text" label="......................License KEY..................................................................." />         
+    <field name="license" type="text" default="License key" size="50" label="License key" description="License key"/>         
+</fieldset>	
+	  <fieldset name="analytics" label="Google analytics">
+               <field type="spacer" class="text" label="......................Google analytics..................................................................." />
+             <field name="analytics" type="text" default="UA-XXXXXXXX-1" size="50" label="tracking Id"/>
+			 <field name="ac" type="radio" default="0" class="btn-group" label="" description="test">
+					<option value="0">Disabled</option>
+					<option value="1">Enabled</option>
+				</field>         
+</fieldset>
+
+	
+<fieldset name="favicon" label="Favicon">  
+          <field type="spacer" class="text" label="...........................................FAVICON........................................................" />    
+          	<field name="fav" type="media" label="Upload favicon" description="" default="templates/dd_work_89/images/favicon.ico"/>
+</fieldset>	
+   <fieldset name="contact" label="Contact Header">
+    <field type="spacer" class="text" label="......................Contact.Header..................................................................." />         
+    <field name="name" type="text" default="AB Work" size="50" label="Name:"/>
+	<field name="telephone" type="text" default="Call us: 1234 - 5678 - 9012 " size="50" label="Telephone:"/> 
+	<field name="email" type="text" default="company@email.com " size="50" label="Email:"/>
+	 <field type="spacer" class="text" label="......................Close.contact..................................................................." />  
+	 <field name="close_contact" type="radio" default="1" class="btn-group" label="">
+					<option value="0">Disabled</option>
+					<option value="1">Enabled</option>
+				</field>              
+</fieldset>	
+<fieldset name="slideshow" label="Slideshow">
+			<field type="spacer" class="text" label="...............................SLIDE.1..1920px......................................................" />	
+			<field name="foto1" type="media" label="Upload photo 1" description="" default="templates/dd_work_89/images/slideshow/1.jpg"/>
+			<field name="s1" type="text" default="Work text caption 1" size="50" label="Caption 1"/>
+			<field name="s2" type="text" default="Work text caption 2" size="50" label="Caption 2"/>
+			<field type="spacer" class="text" label="...............................SLIDE.2..1920px......................................................" />	
+			<field name="foto2" type="media" label="Upload photo 2" description="" default="templates/dd_work_89/images/slideshow/2.jpg"/>
+			<field name="s3" type="text" default="Work text caption 3" size="50" label="Caption 3"/>
+			<field name="s4" type="text" default="Work text caption 4" size="50" label="Caption 4"/>
+			<field type="spacer" class="text" label="...............................SLIDE.3..1920px......................................................" />	
+			<field name="foto3" type="media" label="Upload photo 3" description="" default="templates/dd_work_89/images/slideshow/3.jpg"/>
+			<field name="s5" type="text" default="Work text caption 5" size="50" label="Caption 5"/>
+			<field name="s6" type="text" default="Work  text caption 6" size="50" label="Caption 6"/>
+			<field type="spacer" class="text" label="...............................SLIDE.4..1920px......................................................" />	
+			<field name="foto4" type="media" label="Upload photo 4" description="" default="templates/dd_work_89/images/slideshow/4.jpg"/>
+			<field name="s7" type="text" default="Work text caption 7" size="50" label="Caption 7"/>
+			`<field name="s8" type="text" default="Work text caption 8" size="50" label="Caption 8"/>
+				<field type="spacer" label="Disable all capition" />
+			<field name="close_text" type="radio" default="1" class="btn-group"  label="" description="test">
+					<option value="0">Disabled</option>
+					<option value="1">Enabled</option>
+					</field>
+						<field type="spacer" label="Disable Slideshow  " />
+			<field name="close_slideshow" type="radio" default="1" class="btn-group"  label="" description="test">
+					<option value="0">Disabled</option>
+					<option value="1">Enabled</option>
+					</field>
+			</fieldset>
+			
+			<fieldset name="box" label="3 BOX PANEL">
+			    <field type="spacer" class="text" label="..........................................1.Box................................." />         
+					
+			<field name="bf1" type="media" label="Upload image" description="" default="templates/dd_work_89/images/box/1.jpg"/>
+			<field name="bl1" type="text" default="http://" size="50" label="url image" />
+			<field name="bt1" type="text" default="SKILLED PROFESSIONALS" size="50" label="Title" />
+			<field name="bt1a" type="text" default="YOUR PROPERTY IN GOOD HANDS." size="50" label="Title 2" />
+		    <field name="bte1" type="textarea" default="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " rows="8" cols="60"  label="Text"  />
+		
+			 <field type="spacer" class="text" label="..........................................2.Box................................." />  
+			
+			<field name="bf2" type="media" label="Upload image" description="" default="templates/dd_work_89/images/box/2.jpg"/>
+			<field name="bl2" type="text" default="http://" size="50" label="url image" />
+			<field name="bt2" type="text" default="EFFECTIVE PLANNING." size="50" label="Title" />
+			<field name="bt2a" type="text" default="CONSTRUCTION PROCESS ORGANIZED." size="50" label="Title 2" />
+		    <field name="bte2" type="textarea" default="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " rows="8" cols="60"  label="Text"  />
+		
+			 <field type="spacer" class="text" label="..........................................3.Box................................." />  
+	
+	<field name="bf3" type="media" label="Upload image" description="" default="templates/dd_work_89/images/box/3.jpg"/>
+	<field name="bl3" type="text" default="http://" size="50" label="url image" />
+			<field name="bt3" type="text" default="RISK MANAGEMENT." size="50" label="Title"  />
+			<field name="bt3a" type="text" default="WE HAVE GOT YOU COVERED." size="50" label="Title 2" />
+		    <field name="bte3" type="textarea" default="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " rows="8" cols="60"  label="Text"  />
+			
+
+	<field type="spacer" class="text" label="..................................DISABLE..3.Box................................." />  
+			<field name="boxc" type="radio" default="1" class="btn-group" label="">
+					<option value="0">Disable</option>
+					<option value="1">Enable</option>
+				</field>
+				
+			</fieldset>
+			
+			
+			<fieldset name="maps" label="Google Map">
+			 <field type="spacer" class="text" label="...........................................Google.Maps.................................................." /> 
+            <field name="map1" type="text" default="Krakow" label="City" description="City" filter="string" />
+			<field name="map2" type="text" default="os na stoku 1" label="Street" description="Street" filter="string" />
+			<field type="spacer" label="Disable Map" />
+			<field name="mc" type="radio" default="1" class="btn-group"  label="" description="map">
+					<option value="0">Disabled</option>
+					<option value="1">Enabled</option>
+					</field>
+					</fieldset>
+					
+					eldset>	
+   <fieldset name="foterinfo" label="Foter Info">
+
+	<field type="spacer" class="text" label="......................ADRESS..................................................................." />         
+    <field name="adress" type="text" default="ADDRESS" size="50" label="Adress:"/>
+	<field name="line1" type="text" default="55 EAST STREET, 21ST FLOOR" size="50" label="line1:"/> 
+	<field name="line2" type="text" default="NEW YORK, UNITED STATES" size="50" label="Line2:"/>
+	
+		<field type="spacer" class="text" label="......................SOCIAL..................................................................." />
+		<field name="ns" type="text" default="GET IN TOUCH" size="50" label="GET IN TOUCH"/>         
+   <field type="spacer" class="text" label="...........................................FACEBOOK................................................." />
+			<field name="facebook" type="text" default="//www.facebook.com/sharer.php?u=" label="Facebok url:" description="facebok link" filter="string" />
+				<field name="fc" type="radio" default="1" class="btn-group" label="" description="">
+					<option value="0">Disabled</option>
+					<option value="1">Enabled</option>
+				</field>
+				<field type="spacer" class="text" label=".........................................TWITTER................................................." />
+            <field name="twitter" type="text" default="//twitter.com/share?url=&amp;text=" label="Twitter url:" description="Twitter link" filter="string" />
+				<field name="tc" type="radio" default="1" class="btn-group" label="" description="">
+					<option value="0">Disabled</option>
+					<option value="1">Enabled</option>
+				</field>
+			
+				<field type="spacer" class="text" label=".........................................GOOGLE+................................................." />
+			<field name="google" type="text" default="//plus.google.com/share?url=http://google.com" label="Google+ url:" description="Google+ link" filter="string" />
+				<field name="gc" type="radio" default="1" class="btn-group" label="" description="">
+					<option value="0">Disabled</option>
+					<option value="1">Enabled</option>
+				</field>
+					<field type="spacer" class="text" label=".........................................PINTEREST..........................................." />
+			<field name="pinterest" type="text" default="//pinterest.com/pin/create/button/?url=&amp;media=&amp;description=" label="pinterest url:" description="pinterest link" filter="string" />
+				<field name="pc" type="radio" default="1" class="btn-group" label="" description="">
+					<option value="0">Disabled</option>
+					<option value="1">Enabled</option>
+				</field>
+	
+		        <field type="spacer" class="text" label=".........................................DISABL.ALL.ICON........................................." />
+				<field name="allicon" type="radio" default="1" class="btn-group" label="" description="">
+					<option value="0">Disabled</option>
+					<option value="1">Enabled</option>
+				</field>
+	<field type="spacer" class="text" label="......................CONTACT..................................................................." />  
+	 <field name="namef" type="text" default="AB Work" size="50" label="Name:"/>
+	<field name="telephonef" type="text" default="Call us: 1234 - 5678 - 9012 " size="50" label="Telephone:"/> 
+	<field name="emailf" type="text" default="company@email.com " size="50" label="Email:"/>
+	
+	<field type="spacer" class="text" label=".........................................DISABLE FOOTER INFO........................................." />
+				<field name="fi" type="radio" default="1" class="btn-group" label="" description="">
+					<option value="0">Disabled</option>
+					<option value="1">Enabled</option>
+				</field>
+	           
+</fieldset>	
+			
+			 <fieldset name="footer" label="Footer">  
+          <field type="spacer" class="text" label="...........................................FOOTER......................................................." />    
+          <field name="footer1" type="text" default="AB Work" size="50" label="Site name" description="footer site name"/>
+	
+		    
+</fieldset>	
+    </fields>
+  </config>
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.tpl_dd_work_89.ini</language>
+  </languages>
+</extension>

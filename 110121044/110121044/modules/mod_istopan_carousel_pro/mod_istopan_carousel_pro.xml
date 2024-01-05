@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.2" client="site" method="upgrade">
+	<name>Custom Carousel Pro</name>
+	<creationDate>2017 march 22</creationDate>
+	<author>Istopan</author>
+	<authorEmail>info@istopan.gr</authorEmail>
+	<authorUrl>http://www.istopan.gr</authorUrl>
+	<copyright>istopan.gr</copyright>
+	<license>GNU-GPL</license>
+	<version>1.2.0</version>
+	<description><![CDATA[ <b>by Istopan </b><p>CUSTOMIZE EACH CAROUSEL WITH EDITOR AND PLUGINS</p>More information at <a href="http://www.istopan.gr" target="_blank">http://www.istopan.gr</a>]]></description>
+	<files>
+		<filename module="mod_istopan_carousel_pro">mod_istopan_carousel_pro.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+	</files>
+	
+	<updateservers>
+		<server type="extension" name="Custom Carousel Pro" priority="1">http://istopan.gr/updates/carousel_pro.xml</server>
+	</updateservers>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="ctemplate" type="list" default="1" label="Carousel Type" description="Select Caroysel style">
+ 				 	<option value="1">Simple Carousel</option>
+					<option value="2">Slide Js</option>
+					<option value="3">BxSlider</option>
+				</field>
+				<field name="cwidth" type="text" label="Width" description="Width of carousel box px or % e.g. 100px" default="100%" />
+				<field name="cheight" type="text" label="Height" description="Height of carousel box px or % e.g. 200px" default="250px" />
+				<field name="tposition" type="text" label="Top Position" description="Position from Top of The Module px or % e.g. 30px" default="0px" />
+				<field name="cbgnd" type="color" label="Background" default="none" description="Carousel  background color selection, default is none" />
+				<field name="litextsd" type="text" label="Text Shadow" description="Shadow for carousel text e.g. #222 3px 2px 3px" default="none" />
+			</fieldset>
+			
+			<fieldset name="SimpleCarousel" label="Simple Carousel">
+				<field name="cborder" type="text" label="Carousel Border" default="1px solid #ccc" description="Border for Carousel e.g. none or 1px solid #eee" />
+				<field name="cbshadow" type="text" label="Carousel Box Shadow" default="2px 2px 10px #ccc" description="Box Shadow for Carousel e.g. 2px 2px 10px #ccc" />
+				<field name="cjsloaders" type="radio" class="btn-group" default="0" label="Loader" description="Slider loader Enable / Disable. Note: Use Loader for Large carousels and disable loader on all other carousel if you ue multiple itance of the module.">
+ 				 	<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="lbbgcolors" type="color" label="Loader Background" default="#222" description="Loader background color selection" />
+				<field name="lbbgimgs" type="text" label="Loader Background Image" default="" description="Loader background image. Images must be located to IMAGES folder e.g. image.jpg" />
+				<field name="lbbgrpts" type="list" default="repeat" label="Loader Background Repeat" description="e.g. repeat | no-repeat | repeat-x | repeat-y">
+ 				 	<option value="repeat">repeat</option>
+  					<option value="no-repeat">no-repeat</option>
+					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+				</field>
+				<field name="lbprbars" type="radio" class="btn-group" default="true" label="Progress Bar" description="Enable / Disable loader progress bar">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				<field name="lbprbarclrs" type="color" label="Progress Bar color" default="#fafafa" description="Progress Bar color selection" />
+				<field name="lbprbarhgs" type="text" label="Progress Bar height" default="10px" description="Progress Bar height e.g. 10px or 10%" />
+				<field name="lbprbarpss" type="list" default="bottom" label="Progress Bar position" description="e.g. top | center | bottom">
+ 				 	<option value="top">top</option>
+  					<option value="center">center</option>
+					<option value="bottom">bottom</option>
+				</field>
+				<field name="lbprcnts" type="radio" class="btn-group" default="true" label="Percent" description="Enable / Disable Show percent of loading progress">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				<field name="lbprcntszs" type="text" label="Percent font" default="50px" description="Font size for percent number e.g. 50px" />
+				<field name="jsrandoms" type="radio" class="btn-group" default="0" label="Random" description="Shuffle carousels for random ordering">
+ 				 	<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="cnpadding" type="text" label="Nav Bar padding" default="5px 0" description="Nav bar padding px or % 5px 0" />
+				<field name="cnback" type="color" label="Nav Bar Background" default="none" description="Nav bar background color selection, default is none" />
+				<field name="cnbalign" type="list" default="center" label="Nav Bar buttons align" description="Select an option for Nav Bar buttons align position">
+ 				 	<option value="center">Center</option>
+  					<option value="left">Left</option>
+					<option value="right">Right</option>
+				</field>
+				<field name="cntop" type="text" label="Nav Bar Top" description="Position from Top of The Module px or % e.g. 30px or 50%" default="0px" />
+				<field name="cbfsize" type="text" label="Buttons Size" default="20px" description="Size of prev and next buttons e.g. 20px" />
+				<field name="cblheight" type="text" label="Buttons line-height" default="15px" description="line-height of prev and next buttons e.g. 15px" />
+				<field name="cbborder" type="text" label="Buttons border" default="none" description="border of prev and next buttons e.g. 1px solid #000 or none" />
+				<field name="cbbgcolor" type="color" label="Buttons Background" default="none" description="Button background color selection" />
+				<field name="cbcolor" type="color" label="Buttons text Color" default="#fafafa" description="Buttons text color selection" />
+				<field name="cbradius" type="text" label="Buttons Radius" default="0px" description="Border radius for buttons e.g. 10px" />
+				<field name="cbhbgcolor" type="color" label="Buttons hover Background" default="none" description="Button hover background color selection" />
+				<field name="cbhcolor" type="color" label="Buttons hover text color" default="#fff" description="Button hover text color selection" />
+				<field name="cbbmargin" type="text" label="Buttons margin" default="10px" description="Margin for buttons e.g. 10px" />
+				<field name="cbbpadding" type="text" label="Buttons padding" default="10px" description="Padding for buttons e.g. 10px 0" />
+				<field name="clbfloat" type="list" default="none" label="Left button float" description="float position for left button. select none, left and right">
+ 				 	<option value="none">None</option>
+  					<option value="left">Left</option>
+					<option value="right">Right</option>
+				</field>
+				<field name="crbfloat" type="list" default="none" label="Right button float" description="float position for right button. select none, left and right">
+ 				 	<option value="none">None</option>
+  					<option value="left">Left</option>
+					<option value="right">Right</option>
+				</field>
+			</fieldset>
+				
+			<fieldset name="SlideJs" label="Slide Js">
+				<field name="jqueryen" type="radio" class="btn-group" default="0" label="jQuery" description="jQuery Enable / Disable">
+ 				 	<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>				
+				<field name="carfsc" type="radio" class="btn-group" default="0" label="Full Screen" description="Fullscreen Slider, useful for frontpage sliders.">
+ 				 	<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				
+				<field type="spacer" name="spacerldr" class="text" label="LOADER SETTINGS" />								
+				
+				<field name="cjsloader" type="radio" class="btn-group" default="0" label="Loader" description="Slider loader Enable / Disable. Note: Use Loader for Large carousels and disable loader on all other carousel if you ue multiple itance of the module.">
+ 				 	<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="lbbgcolor" type="color" label="Loader Background" default="#222" description="Loader background color selection" />
+				<field name="lbbgimg" type="text" label="Loader Background Image" default="" description="Loader background image. Images must be located to IMAGES folder e.g. image.jpg" />
+				<field name="lbbgrpt" type="list" default="repeat" label="Loader Background Repeat" description="e.g. repeat | no-repeat | repeat-x | repeat-y">
+ 				 	<option value="repeat">repeat</option>
+  					<option value="no-repeat">no-repeat</option>
+					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+				</field>
+				<field name="lbprbar" type="radio" class="btn-group" default="true" label="Progress Bar" description="Enable / Disable loader progress bar">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				<field name="lbprbarclr" type="color" label="Progress Bar color" default="#fafafa" description="Progress Bar color color selection" />
+				<field name="lbprbarhg" type="text" label="Progress Bar height" default="10px" description="Progress Bar height e.g. 10px or 10%" />
+				<field name="lbprbarps" type="list" default="bottom" label="Progress Bar position" description="e.g. top | center | bottom">
+ 				 	<option value="top">top</option>
+  					<option value="center">center</option>
+					<option value="bottom">bottom</option>
+				</field>
+				<field name="lbprcnt" type="radio" class="btn-group" default="true" label="Percent" description="Enable / Disable Show percent of loading progress">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				<field name="lbprcntsz" type="text" label="Percent" default="50px" description="Font size for percent number e.g. 50px" />
+				
+				<field type="spacer" name="spacergen" class="text" label="GENERAL SETTINGS" />				
+				
+				<field name="cjsborder" type="text" label="Carousel Border" default="1px solid #ccc" description="Border for Carousel e.g. none or 1px solid #eee" />
+				<field name="cjsshadow" type="text" label="Carousel Box Shadow" default="2px 2px 10px #ccc" description="Box Shadow for Carousel e.g. 2px 2px 10px #ccc" />
+				<field name="cmskpd" type="text" label="Padding" default="0px" description="Carousel or Mask or Text Padding. It depends if mask enabled and text position. e.g. 2px 2px 10px or 10px or 20px 0px" />
+				<field name="cbspeed" type="text" label="Speed" description="Speed between slide transitions miliseconds. e.g. 1000" default="1000" />
+				<field name="cbdelay" type="text" label="Delay" description="Delay time until next slide miliseconds. e.g. 6000" default="6000" />
+				<field name="jsauto" type="radio" class="btn-group" default="true" label="Autoplay" description="Automatic start of slides transitions">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				<field name="jsrandom" type="radio" class="btn-group" default="0" label="Random" description="Shuffle carousels for random ordering">
+ 				 	<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="cbddir" type="radio" class="btn-group" default="true" label="Direction" description="Slides direction left or right">
+ 				 	<option value="left">Left</option>
+  					<option value="right">Right</option>
+				</field>
+				<field name="jsphover" type="radio" class="btn-group" default="true" label="Pause on Hover" description="Pause on mouse hover yes or no">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				
+				<field type="spacer" name="spacernav" class="text" label="NAVIGATION SETTINGS" />
+				
+				<field name="jsnav" type="radio" class="btn-group" default="true" label="Navigation" description="Enable navigation buttons yes or no">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				<field name="cbfsize" type="text" label="Buttons Size" default="36px" description="Size of prev and next buttons e.g. 20px" />
+				<field name="cblheight" type="text" label="Buttons line-height" default="34px" description="line-height of prev and next buttons e.g. 15px" />
+				<field name="cbborder" type="text" label="Buttons border" default="none" description="border of prev and next buttons e.g. 1px solid #000 or none" />
+				<field name="cbbgcolor" type="color" label="Buttons Background" default="#222" description="Button background color selection" />
+				<field name="cbcolor" type="color" label="Buttons text Color" default="#fafafa" description="Buttons text color selection" />
+				<field name="cbradius" type="text" label="Buttons Radius" default="0px" description="Border radius for buttons e.g. 10px" />
+				<field name="cbhbgcolor" type="color" label="Buttons hover Background" default="#333" description="Button hover background color selection" />
+				<field name="cbhcolor" type="color" label="Buttons hover text color" default="#fff" description="Button hover text color selection" />
+				<field name="cbheight" type="text" label="Buttons Height" description="Buttons height px or % e.g. 40px" default="40px" />
+				<field name="cbwidth" type="text" label="Buttons Width" description="Buttons width px or % e.g. 40px" default="40px" />
+				<field name="tbposition" type="text" label="Button Top Position" description="Buttons Position from Top of The Module px or % e.g. 50%" default="50%" />
+
+				<field type="spacer" name="spacerpag" class="text" label="PAGINATION SETTINGS" />
+
+				<field name="jspag" type="radio" class="btn-group" default="true" label="Pagination" description="Enable pagination yes or no">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				<field name="cpgbg" type="color" label="Pagination Background" default="#fff" description="Pagination background color selection" />
+				<field name="cpghbg" type="color" label="Pagination Hover Background" default="#eee" description="Pagination Hover color selection" />
+				<field name="cpgabg" type="color" label="Pagination Active Background" default="#eee" description="Pagination Active color selection" />
+				<field name="cpgwidth" type="text" label="Pagination Width" description="Width of pagination dots px or % e.g. 15px" default="15px" />
+				<field name="cpgstyle" type="radio" class="btn-group" default="50%" label="Pagination Style" description="Pagination Square or Circle">
+ 				 	<option value="0%">SQUARE</option>
+  					<option value="50%">CIRCLE</option>
+				</field>
+				
+				<field type="spacer" name="spacermas" class="text" label="MASK - TEXT SETTINGS" />
+				
+				<field name="cmskbg" type="color" label="Mask Background" default="" format="rgba" description="Mask background color selection" />
+				<field name="cmskbcl" type="color" label="Mask Text color" default="" description="Mask text color selection" />
+				<field name="cmskwd" type="text" label="Mask or Text Width" default="100%" description="Mask or Text width px or %" />
+				<field name="cmskhg" type="text" label="Mask or Text Height" default="" description="Mask or Text height px or %" />
+				<field name="cmskpt" type="text" label="Top Mask or Text Position" default="" description="Mask or Text position from the top px or % e.g. 10px *This affects the positioning of the contents within the slide" />
+				<field name="cmskpb" type="text" label="Bottom Mask or Text Position" default="" description="Mask or Text position from the bottom px or % e.g. 10px *This affects the positioning of the contents within the slide" />
+				<field name="cmskpr" type="text" label="Right Mask or Text Position" default="" description="Mask or Text position from the right side px or % e.g. 10px *This affects the positioning of the contents within the slide" />
+				<field name="cmskpl" type="text" label="Left Mask or Text Position" default="" description="Mask or Text position from the left side px or % e.g. 10px *This affects the positioning of the contents within the slide" />
+				<field name="cmskbs" type="text" label="Mask Shadow" default="" description="Shadow for Mask e.g. #ccc 2px 3px 5px" />	
+				<field name="cmskbr" type="text" label="Mask Radius" default="" description="Radius for Mask px or % e.g. 10px or 20%" />			
+			</fieldset>
+			
+			<fieldset name="BxSlider" label="Bxslider">
+				<field name="jqueryenbx" type="radio" class="btn-group" default="0" label="jQuery" description="jQuery Enable / Disable">
+ 				 	<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				
+				<field name="cbxborder" type="text" label="Carousel Border" default="1px solid #ccc" description="Border for Carousel e.g. none or 1px solid #eee" />
+				<field name="cbxshadow" type="text" label="Carousel Box Shadow" default="2px 2px 10px #ccc" description="Box Shadow for Carousel e.g. 2px 2px 10px #ccc" />
+				<field name="cmskpdbx" type="text" label="Padding" default="0px" description="Carousel or Mask or Text Padding. It depends if mask enabled and text position. e.g. 2px 2px 10px or 10px or 20px 0px" />
+
+				<field name="jsrandombx" type="radio" class="btn-group" default="0" label="Random" description="
+Dynamically adjust slider height based on each slide's height">
+ 				 	<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="cbxmarbt" type="text" label="Margin Bottom" default="60px" description="Margin Bottom for carousel e.g. 60px, 0px, 10%" />
+					
+				<field type="spacer" name="spacergen" class="text" label="GENERAL SETTINGS" />				
+				
+				<field name="bxmode" type="radio" class="btn-group" default="horizontal" label="Mode" description="Type of transition between slides, horizontal, vertical or fade">
+ 				 	<option value="horizontal">Horizontal</option>
+  					<option value="vertical">Vertical</option>
+					<option value="fade">fade</option>
+				</field>
+				
+				<field name="bxauto" type="radio" class="btn-group" default="false" label="Auto" description="Auto Start. Slides will automatically transition.">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				
+				<field name="bxpause" type="text" label="Pause - Delay" default="4000" description="The amount of time (in ms) between each auto transition" />
+				
+				<field name="bxautodir" type="radio" class="btn-group" default="next" label="Direction" description="The direction of auto show slide transitions.">
+ 				 	<option value="next">Next</option>
+  					<option value="prev">Prev</option>
+				</field>
+				
+				<field name="bxautohov" type="radio" class="btn-group" default="true" label="Auto Hover" description="Auto show will pause when mouse hovers over slider.">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				
+				<field name="bxautodl" type="text" label="Auto Delay" default="0" description="Time (in ms) auto show should wait before starting. e.g 0" />
+
+				<field name="bxspeed" type="text" label="Transition Duration" default="500" description="Slide transition duration (in ms) e.g. 500" />
+				
+				<field name="bxmargin" type="text" label="Margin" default="0" description="Slide Margin e.g. 0 or 10 or 35" />
+				
+				<field name="bxminsl" type="text" label="Min Slides" default="1" description="The minimum number of slides to be shown. Slides will be sized down if carousel becomes smaller than the original size." />
+				<field name="bxmaxsl" type="text" label="Max Slides" default="1" description="The maximum number of slides to be shown. Slides will be sized up if carousel becomes larger than the original size." />
+				<field name="bxmovesl" type="text" label="Move Slides" default="0" description="The number of slides to move on transition. This value must be bigger or equal minSlides, and smaller or equal maxSlides. If zero (default), the number of fully-visible slides will be used." />
+				<field name="bxslwidth" type="text" label="Slide Width" default="0" description="The width of each slide. This setting is required for all horizontal carousels! e.g. 0 or 300 or 5000" />
+				<field name="bxshrink" type="radio" class="btn-group" label="Shrink" default="false" description="Shrink Slider to fit dimensions">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				
+				<field name="bxinfloop" type="radio" class="btn-group" default="true" label="Infinite Loop" description="If Yes, clicking Next while on the last slide will transition to the first slide and vice-versa">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				
+				<field name="jqueryeas" type="radio" class="btn-group" default="1" label="Easing" description="jQuery Easing transition effects Enable / Disable">
+ 				 	<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				
+				<field name="bxeasing" type="list" default="easeInElastic" label="Easing Effect" description="The type of easing to use during transitions. swing or linear ">
+					<option value="jswing">jswing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>			
+								
+				<field name="bxcticker" type="radio" class="btn-group" default="false" label="Ticker" description="Use slider in ticker mode (similar to a news ticker).">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+
+				<field name="bxctickhr" type="radio" class="btn-group" default="true" label="Ticker Hover" description="Ticker will pause when mouse hovers over slider. Note: this functionality does NOT work if using CSS transitions!">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				
+				<field name="bxadheight" type="radio" class="btn-group" default="false" label="Adaptive Height" description="Dynamically adjust slider height based on each slide's height *only for Images not backgrounds">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				
+				<field name="bxadhspeed" type="text" default="500" label="Adaptive Height Speed" description="Slide height transition duration (in ms). Note: only used if adaptiveHeight: true, Integer e.g. 500 *only for Images not backgrounds" />
+				
+				<field name="bxresp" type="radio" class="btn-group" default="true" label="Responsive" description="Enable or disable auto resize of the slider. Useful if you need to use fixed width sliders.">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				
+				<field name="bxploadimg" type="radio" class="btn-group" default="visible" label="Preload Images" description="If 'all', preloads all images before starting the slider. If 'visible', preloads only images in the initially visible slides before starting the slider (tip: use 'visible' if all slides are identical dimensions). Works only on images">
+ 				 	<option value="visible">Visible</option>
+  					<option value="all">All</option>
+				</field>
+				
+				<field name="bxtouch" type="radio" class="btn-group" default="true" label="Touch" description="Enable or disable Touch. If Yes, slider will allow touch swipe transitions.">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				
+				<field name="bxkeyb" type="radio" class="btn-group" default="true" label="Keyboard" description="Enable or disable Keyboard. If Yes, keyboard can be used for carousel navigation.">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				
+				<field type="spacer" name="spacermas" class="text" label="MASK - TEXT SETTINGS" />
+				
+				<field name="cmskbgbx" type="color" label="Mask Background" default="" format="rgba" description="Mask background color selection" />
+				<field name="cmskbclbx" type="color" label="Mask Text Color" default="" description="Mask text color selection" />
+				<field name="cmskwdbx" type="text" label="Mask or Text Width" default="100%" description="Mask or Text width px or %" />
+				<field name="cmskhgbx" type="text" label="Mask or Text Height" default="" description="Mask or Text height px or %" />
+				<field name="cmskptbx" type="text" label="Top Mask or Text Position" default="" description="Mask or Text position from the top px or % e.g. 10px *This affects the positioning of the contents within the slide" />
+				<field name="cmskpbbx" type="text" label="Bottom Mask or Text Position" default="" description="Mask or Text position from the bottom px or % e.g. 10px *This affects the positioning of the contents within the slide" />
+				<field name="cmskprbx" type="text" label="Right Mask or Text Position" default="" description="Mask or Text position from the right side px or % e.g. 10px *This affects the positioning of the contents within the slide" />
+				<field name="cmskplbx" type="text" label="Left Mask or Text Position" default="" description="Mask or Text position from the left side px or % e.g. 10px *This affects the positioning of the contents within the slide" />
+				<field name="cmskbsbx" type="text" label="Mask Shadow" default="" description="Shadow for Mask e.g. #ccc 2px 3px 5px" />	
+				<field name="cmskbrbx" type="text" label="Mask Radius" default="" description="Radius for Mask px or % e.g. 10px or 20%" />			
+				<field type="spacer" name="spacerpage" class="text" label="PAGER SETTINGS" />
+				<field name="bxpager" type="radio" class="btn-group" default="true" label="Pager" description="Enable / Disable Pager. If Yes, Next / Prev controls will be added">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				<field name="bxpagertp" type="radio" class="btn-group" default="full" label="Pager Type" description="If 'full', a pager link will be generated for each slide. If 'short', a x / y pager will be used (ex. 1 / 5)">
+  				 	<option value="full">FULL</option>
+  					<option value="short">SHORT</option>
+				</field>
+				<field name="bxpagertps" type="text" label="Pager Short Separator" default="/" description="If pager Type: 'short', pager will use this value as the separating character." />
+				<field name="bxpgclr" type="color" label="Pager Color" default="#666" description="Pager bullets color selection" />
+				<field name="bxpgclrh" type="color" label="Pager Hover Color" default="#222" description="Pager hover bullets color selection" />
+				<field name="bxpgwd" type="text" label="Width" default="10" description="Width of pager bullets e.g. 10 (without px). Note: if you want bullets to be circle width, height and border radius must be equal" />
+				<field name="bxpgrad" type="text" label="Radius" default="10" description="Radius of pager bullets e.g. 10 (without px). Note: if you want bullets to be circle width, height and border radius must be equal" />
+				<field name="bxpghg" type="text" label="Height" default="10" description="Height of pager bullets e.g. 10 (without px). Note: if you want bullets to be circle width, height and border radius must be equal" />
+				<field name="bxpgmrg" type="text" label="Margin" default="10px 5px" description="Margin of pager bullets e.g. 0 5px or 10px." />
+	
+				
+				<field type="spacer" name="spacernav" class="text" label="NAVIGATION SETTINGS" />	
+								
+				<field name="bxcontrols" type="radio" class="btn-group" default="true" label="Controls" description="Enable / Disable Controls. If Yes, Next / Prev controls will be added">
+ 				 	<option value="true">JYES</option>
+  					<option value="false">JNO</option>
+				</field>
+				<field name="bxnavstyle" type="list" default="1" label="Buttons Style" description="Select Buttons style.">
+ 				 	<option value="controls">Style 1</option>
+					<option value="controls2">Style 2</option>
+					<option value="controls3">Style 3</option>
+					<option value="controls4">Style 4</option>
+					<option value="controls5">Style 5</option>
+					<option value="controls6">Style 6</option>
+					<option value="controls7">Style 7</option>
+				</field>
+			   <field name="bxnavtop" type="text" label="Position" default="50%" description="Navigation buttons position from top px 0r %. e.g. 50% or 200px" />
+			   <field name="bxnext" type="text" label="Next Button" default="Next" description="Text to be used for the Next button control" />
+			   <field name="bxprev" type="text" label="Prev Button" default="Prev" description="Text to be used for the Prev button control" />			
+				
+			</fieldset>
+			
+			
+			<fieldset name="car1" label="Carousel 1">
+				<field name="cc1bgk" type="color" label="Background Color" default="none" description="Carousel 1 background color selection" />
+				<field name="cc1bgimg" type="text" label="Background Image" default="" description="Carousel 1 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+				<field name="cc1bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc1bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc1bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc1bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>		
+				<field name="carousel1" type="editor" label="Carousel 1" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car2" label="Carousel 2">
+				<field name="cc2bgk" type="color" label="Background Color" default="none" description="Carousel 2 background color selection" />
+				<field name="cc2bgimg" type="text" label="Background Image" default="" description="Carousel 2 background image. Images must be located to IMAGES folder e.g. image.jpg" />			
+								<field name="cc2bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc2bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc2bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc2bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel2" type="editor" label="Carousel 2" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car3" label="Carousel 3">
+				<field name="cc3bgk" type="color" label="Background Color" default="none" description="Carousel 3 background color selection" />
+				<field name="cc3bgimg" type="text" label="Background Image" default="" description="Carousel 3 background image. Images must be located to IMAGES folder e.g. image.jpg" />			
+								<field name="cc3bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc3bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc3bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc3bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel3" type="editor" label="Carousel 3" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+	
+			
+			<fieldset name="car4" label="Carousel 4">
+				<field name="cc4bgk" type="color" label="Background Color" default="none" description="Carousel 4 background color selection" />
+				<field name="cc4bgimg" type="text" label="Background Image" default="" description="Carousel 4 background image. Images must be located to IMAGES folder e.g. image.jpg" />			
+								<field name="cc4bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc4bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc4bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc4bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel4" type="editor" label="Carousel 4" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car5" label="Carousel 5">
+				<field name="cc5bgk" type="color" label="Background Color" default="none" description="Carousel 5 background color selection" />
+				<field name="cc5bgimg" type="text" label="Background Image" default="" description="Carousel 5 background image. Images must be located to IMAGES folder e.g. image.jpg" />			
+								<field name="cc5bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 500px, contain" />
+				<field name="cc5bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc5bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc5bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel5" type="editor" label="Carousel 5" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car6" label="Carousel 6">
+				<field name="cc6bgk" type="color" label="Background Color" default="none" description="Carousel 6 background color selection" />
+				<field name="cc6bgimg" type="text" label="Background Image" default="" description="Carousel 6 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+								<field name="cc6bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1600px 400px, contain" />
+				<field name="cc6bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc6bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc6bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel6" type="editor" label="Carousel 6" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car7" label="Carousel 7">
+				<field name="cc7bgk" type="color" label="Background Color" default="none" description="Carousel 7 background color selection" />
+				<field name="cc7bgimg" type="text" label="Background Image" default="" description="Carousel 7 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+								<field name="cc7bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc7bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc7bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc7bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel7" type="editor" label="Carousel 7" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car8" label="Carousel 8">
+				<field name="cc8bgk" type="color" label="Background Color" default="none" description="Carousel 8 background color selection" />
+				<field name="cc8bgimg" type="text" label="Background Image" default="" description="Carousel 8 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+								<field name="cc8bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc8bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc8bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc8bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel8" type="editor" label="Carousel 8" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car9" label="Carousel 9">
+				<field name="cc9bgk" type="color" label="Background Color" default="none" description="Carousel 9 background color selection" />
+				<field name="cc9bgimg" type="text" label="Background Image" default="" description="Carousel 9 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+								<field name="cc9bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc9bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc9bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc9bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel9" type="editor" label="Carousel 9" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car10" label="Carousel 10">
+				<field name="cc10bgk" type="color" label="Background Color" default="none" description="Carousel 10 background color selection" />
+				<field name="cc10bgimg" type="text" label="Background Image" default="" description="Carousel 10 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+								<field name="cc10bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc10bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc10bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc10bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel10" type="editor" label="Carousel 10" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car11" label="Carousel 11">
+				<field name="cc11bgk" type="color" label="Background Color" default="none" description="Carousel 11 background color selection" />
+				<field name="cc11bgimg" type="text" label="Background Image" default="" description="Carousel 11 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+								<field name="cc11bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc11bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc11bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc11bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel11" type="editor" label="Carousel 11" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car12" label="Carousel 12">
+				<field name="cc12bgk" type="color" label="Background Color" default="none" description="Carousel 12 background color selection" />
+				<field name="cc12bgimg" type="text" label="Background Image" default="" description="Carousel 12 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+				<field name="cc12bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc12bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc12bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc12bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel12" type="editor" label="Carousel 12" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car13" label="Carousel 13">
+				<field name="cc13bgk" type="color" label="Background Color" default="none" description="Carousel 13 background color selection" />
+				<field name="cc13bgimg" type="text" label="Background Image" default="" description="Carousel 13 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+								<field name="cc13bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc13bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc13bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc13bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel13" type="editor" label="Carousel 13" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car14" label="Carousel 14">
+				<field name="cc14bgk" type="color" label="Background Color" default="none" description="Carousel 14 background color selection" />
+				<field name="cc14bgimg" type="text" label="Background Image" default="" description="Carousel 14 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+								<field name="cc14bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc14bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc14bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc14bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel14" type="editor" label="Carousel 14" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>	
+			
+			<fieldset name="car15" label="Carousel 15">
+				<field name="cc15bgk" type="color" label="Background Color" default="none" description="Carousel 15 background color selection" />
+				<field name="cc15bgimg" type="text" label="Background Image" default="" description="Carousel 15 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+								<field name="cc15bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc15bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc15bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc15bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel15" type="editor" label="Carousel 15" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>	
+			
+			<fieldset name="car16" label="Carousel 16">
+				<field name="cc16bgk" type="color" label="Background Color" default="none" description="Carousel 16 background color selection" />
+				<field name="cc16bgimg" type="text" label="Background Image" default="" description="Carousel 16 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+								<field name="cc16bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc16bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc16bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc16bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel16" type="editor" label="Carousel 16" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>		
+						
+			<fieldset name="car17" label="Carousel 17">
+				<field name="cc17bgk" type="color" label="Background Color" default="none" description="Carousel 17 background color selection" />
+				<field name="cc17bgimg" type="text" label="Background Image" default="" description="Carousel 17 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+								<field name="cc17bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc17bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc17bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc17bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel17" type="editor" label="Carousel 17" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car18" label="Carousel 18">
+				<field name="cc18bgk" type="color" label="Background Color" default="none" description="Carousel 18 background color selection" />
+				<field name="cc18bgimg" type="text" label="Background Image" default="" description="Carousel 18 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+								<field name="cc18bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc18bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc18bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc18bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel18" type="editor" label="Carousel 18" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>			
+					
+			<fieldset name="car19" label="Carousel 19">
+				<field name="cc19bgk" type="color" label="Background Color" default="none" description="Carousel 19 background color selection" />
+				<field name="cc19bgimg" type="text" label="Background Image" default="" description="Carousel 19 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+								<field name="cc19bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc19bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc19bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc19bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel19" type="editor" label="Carousel 19" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>
+			
+			<fieldset name="car20" label="Carousel 20">
+				<field name="cc20bgk" type="color" label="Background Color" default="none" description="Carousel 20 background color selection" />
+				<field name="cc20bgimg" type="text" label="Background Image" default="" description="Carousel 20 background image. Images must be located to IMAGES folder e.g. image.jpg" />
+				<field name="cc20bgsiz" type="text" default="cover" label="Background Size" description="e.g. cover, auto, 100% 50%, 1200px 400px, contain" />
+				<field name="cc20bgatt" type="radio" class="btn-group" default="fixed" label="Background Attachment" description="e.g. local, scroll, fixed">
+ 				 	<option value="fixed">Fixed</option>
+  					<option value="scroll">Scroll</option>
+					<option value="local">Local</option>
+				</field>
+				<field name="cc20bgpos" type="text" default="center center" label="Background Position" description="e.g. left top, 
+left center, left bottom, right top, right center, right bottom, center top, center center, center bottom or 100% 50%" />
+				<field name="cc20bgrep" type="radio" class="btn-group" default="no-repeat" label="Background Repeat" description="e.g. repeat, no-repeat, repeat-x, repeat-y">
+ 				 	<option value="no-repeat">no-repeat</option>
+  					<option value="repeat-x">repeat-x</option>
+					<option value="repeat-y">repeat-y</option>
+					<option value="repeat">repeat</option>
+				</field>	
+				<field name="carousel20" type="editor" label="Carousel 20" description="Custom Content" width="100%" filter="safehtml" buttons="true" />
+			</fieldset>								
+					
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="text" label="Module Class Suffix" description="A suffix to be applied to the css class of the module (table.moduletable), this allows individual module styling" />
+				<field name="cccode" type="textarea" label="Custom Css" description="Here you can use CSS code" />
+			</fieldset>
+			
+		</fields>
+	</config>
+</extension>
